@@ -1,4 +1,4 @@
-# miniproject
+# miniproject <팀 소개페이지>
 
 A new Flutter project.
 
