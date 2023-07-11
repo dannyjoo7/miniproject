@@ -89,6 +89,9 @@ flutter:
     - family: GES
       fonts:
         - asset: assets/fonts/Gangwon_Education_Saeum.ttf
+    - family: Fasthand
+      fonts:
+        - asset: assets/fonts/Fasthand-Regular.ttf
 
 
   # For details regarding fonts from package dependencies,
