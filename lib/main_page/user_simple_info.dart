@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class user_simple_info extends StatelessWidget {
-  const user_simple_info({
+class UserSimpleInfo extends StatelessWidget {
+  const UserSimpleInfo({
     super.key,
     required this.num,
     required this.one_line_introduction,

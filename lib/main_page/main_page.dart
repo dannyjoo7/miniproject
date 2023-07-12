@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:miniproject/main_page/user_simple_info.dart';
 
+import '../introduce_page/introduce_page.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
@@ -16,6 +18,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 0.5,
         title: Text(
@@ -114,21 +117,30 @@ class _MainPageState extends State<MainPage> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(15.0),
-                                  child: user_simple_info(
-                                    num: "팀원1",
-                                    one_line_introduction: "팀원 1 소개글",
+                                  child: GestureDetector(
+                                    child: UserSimpleInfo(
+                                      num: "팀원1",
+                                      one_line_introduction: "팀원 1 소개글",
+                                    ),
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  IntroducePage()));
+                                    },
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(15.0),
-                                  child: user_simple_info(
+                                  child: UserSimpleInfo(
                                     num: "팀원2",
                                     one_line_introduction: "팀원 2 소개글",
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(15.0),
-                                  child: user_simple_info(
+                                  child: UserSimpleInfo(
                                     num: "팀원3",
                                     one_line_introduction: "팀원 3 소개글",
                                   ),
@@ -140,14 +152,14 @@ class _MainPageState extends State<MainPage> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.all(15.0),
-                                  child: user_simple_info(
+                                  child: UserSimpleInfo(
                                     num: "팀원4",
                                     one_line_introduction: "팀원 4 소개글",
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(15.0),
-                                  child: user_simple_info(
+                                  child: UserSimpleInfo(
                                     num: "팀원5",
                                     one_line_introduction: "팀원 5 소개글",
                                   ),
