@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:miniproject/main_page/user_simple_info.dart';
 
 import '../introduce_page/introduce_page.dart';
+import '../introduce_page/team_detail_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -13,6 +14,8 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int curidx = 0;
+  bool isHeart = false;
+  bool isBookmarked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -90,9 +93,17 @@ class _MainPageState extends State<MainPage> {
                           child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            Icons.account_circle_outlined,
-                            size: 80,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => TeamDetailPage()));
+                            },
+                            child: Icon(
+                              Icons.account_circle_outlined,
+                              size: 80,
+                            ),
                           ),
                           Text(
                             "팀 세부 소개",
@@ -217,10 +228,19 @@ class _MainPageState extends State<MainPage> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(
-                  // 하트 아이콘
-                  Icons.favorite_border,
-                  size: 40,
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isHeart = !isHeart;
+                    });
+                  },
+                  child: Icon(
+                    // 하트 아이콘
+                    isHeart ? Icons.favorite : Icons.favorite_border,
+                    color: isHeart ? Colors.pink : Colors.black,
+
+                    size: 40,
+                  ),
                 ),
                 SizedBox(
                   width: 8,
@@ -240,9 +260,18 @@ class _MainPageState extends State<MainPage> {
                 SizedBox(
                   width: 205,
                 ),
-                Icon(
-                  Icons.bookmark_border,
-                  size: 40,
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isBookmarked = !isBookmarked;
+                    });
+                  },
+                  child: Icon(
+                    // 북마크 아이콘
+                    isBookmarked ? Icons.bookmark : Icons.bookmark_border,
+                    color: isBookmarked ? Colors.amber : Colors.black,
+                    size: 40,
+                  ),
                 ),
               ],
             ),
@@ -266,8 +295,8 @@ class _MainPageState extends State<MainPage> {
                       style: TextStyle(fontSize: 20),
                     ),
                     Text(
-                      "세부사항",
-                      style: TextStyle(fontSize: 20),
+                      "안녕하세요! 하이파이브입니다. 내일 배움 캠프의 첫 프로젝트\n조인만큼 만나서 반갑다는 의미와 팀원이 5명인 점을 고려하여\n팀 이름을 하이파이브로 짓게 되었습니다.",
+                      style: TextStyle(fontSize: 15),
                     ),
                   ],
                 ),
@@ -277,7 +306,7 @@ class _MainPageState extends State<MainPage> {
 
           // 여백
           SizedBox(
-            height: 40,
+            height: 10,
           ),
         ],
       ),
