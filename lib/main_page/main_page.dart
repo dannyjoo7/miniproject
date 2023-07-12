@@ -142,6 +142,7 @@ class _MainPageState extends State<MainPage> {
                                               userList[0].oneLiner,
                                         ),
                                         onTap: () {
+                                          userList[0].views++;
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -159,6 +160,7 @@ class _MainPageState extends State<MainPage> {
                                               userList[1].oneLiner,
                                         ),
                                         onTap: () {
+                                          userList[1].views++;
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -176,6 +178,7 @@ class _MainPageState extends State<MainPage> {
                                               userList[2].oneLiner,
                                         ),
                                         onTap: () {
+                                          userList[2].views++;
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -198,6 +201,8 @@ class _MainPageState extends State<MainPage> {
                                               userList[3].oneLiner,
                                         ),
                                         onTap: () {
+                                          userList[3].views++;
+
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -215,6 +220,7 @@ class _MainPageState extends State<MainPage> {
                                               userList[4].oneLiner,
                                         ),
                                         onTap: () {
+                                          userList[4].views++;
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
