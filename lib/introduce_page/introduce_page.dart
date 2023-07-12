@@ -65,30 +65,19 @@ class IntroducePage extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    Text(
-                      "4",
-                      style:
-                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "게시물",
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      "4",
-                      style:
-                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "팔로워",
-                      style: TextStyle(fontSize: 18),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "4",
+                          style: TextStyle(
+                              fontSize: 23, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "게시물",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -97,14 +86,40 @@ class IntroducePage extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    Text(
-                      "${user.views}",
-                      style:
-                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "4",
+                          style: TextStyle(
+                              fontSize: 23, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "팔로워",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
                     ),
-                    Text(
-                      "조회수",
-                      style: TextStyle(fontSize: 18),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Column(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "${user.views}",
+                          style: TextStyle(
+                              fontSize: 23, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "조회수",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -119,7 +134,7 @@ class IntroducePage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 15),
                   child: Text(
-                    "hyunjun6133",
+                    user.id,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -151,7 +166,7 @@ class IntroducePage extends StatelessWidget {
                       MaterialPageRoute(
                         // 개인 블로그 주소
                         builder: (context) => WebView(
-                          initialUrl: 'https://velog.io/@hyunjun6133',
+                          initialUrl: user.blog,
                         ),
                       ),
                     );

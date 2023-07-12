@@ -66,30 +66,30 @@ flutter:
   assets:
     - assets/images/hun.png
 
-    - assets/images/0/mbti.png
-    - assets/images/0/self_introduce.png
-    - assets/images/0/advantages.png
-    - assets/images/0/collaboration_style.png
+    - assets/images/dannyjoo/mbti.png
+    - assets/images/dannyjoo/self_introduce.png
+    - assets/images/dannyjoo/advantages.png
+    - assets/images/dannyjoo/collaboration_style.png
 
-    - assets/images/1/mbti.png
-    - assets/images/1/self_introduce.png
-    - assets/images/1/advantages.png
-    - assets/images/1/collaboration_style.png
+    - assets/images/hihyungul/mbti.png
+    - assets/images/hihyungul/self_introduce.png
+    - assets/images/hihyungul/advantages.png
+    - assets/images/hihyungul/collaboration_style.png
 
-    - assets/images/2/mbti.png
-    - assets/images/2/self_introduce.png
-    - assets/images/2/advantages.png
-    - assets/images/2/collaboration_style.png
+    - assets/images/limduh2/mbti.png
+    - assets/images/limduh2/self_introduce.png
+    - assets/images/limduh2/advantages.png
+    - assets/images/limduh2/collaboration_style.png
 
-    - assets/images/3/mbti.png
-    - assets/images/3/self_introduce.png
-    - assets/images/3/advantages.png
-    - assets/images/3/collaboration_style.png
+    - assets/images/hyunjun6133/mbti.png
+    - assets/images/hyunjun6133/self_introduce.png
+    - assets/images/hyunjun6133/advantages.png
+    - assets/images/hyunjun6133/collaboration_style.png
 
-    - assets/images/4/mbti.png
-    - assets/images/4/self_introduce.png
-    - assets/images/4/advantages.png
-    - assets/images/4/collaboration_style.png
+    - assets/images/ljmin94/mbti.png
+    - assets/images/ljmin94/self_introduce.png
+    - assets/images/ljmin94/advantages.png
+    - assets/images/ljmin94/collaboration_style.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
