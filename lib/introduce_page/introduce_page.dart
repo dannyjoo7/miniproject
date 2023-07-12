@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:miniproject/main_page/user_service.dart';
+import 'package:provider/provider.dart';
 
 import '../photo_Detail_Page/Photo_Detail_Page.dart';
 
 class IntroducePage extends StatelessWidget {
+  IntroducePage({required this.index});
+
+  int index;
+
   final List<String> imagePaths = [
     'assets/images/hun.png',
     'assets/images/hun.png',
@@ -17,6 +23,9 @@ class IntroducePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    UserService userService = context.read<UserService>();
+    User user = userService.userList[index];
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -42,7 +51,7 @@ class IntroducePage extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'ljmin94\n한 줄 소개글\nMBTI\n자신에 대한 설명\n객관적으로 살펴본 자신의 장점\n자신의 협업 스타일 소개',
+                '${user.name}\n${user.oneLiner}\n${user.mbti}\n${user.introduceMyself}\n${user.myAdvantage}\n${user.collaborationStyle}',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
