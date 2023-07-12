@@ -2,21 +2,22 @@ import 'package:flutter/material.dart';
 
 class IntroducePage extends StatelessWidget {
   final List<String> imagePaths = [
-    'assets/images/hun1.png',
-    'assets/images/hun2.png',
-    'assets/images/hun3.png',
-    'assets/images/hun4.png',
-    'assets/images/hun5.png',
-    'assets/images/hun6.png',
-    'assets/images/hun7.png',
-    'assets/images/hun8.png',
-    'assets/images/hun9.png',
+    'assets/images/hun.png',
+    'assets/images/hun.png',
+    'assets/images/hun.png',
+    'assets/images/hun.png',
+    'assets/images/hun.png',
+    'assets/images/hun.png',
+    'assets/images/hun.png',
+    'assets/images/hun.png',
+    'assets/images/hun.png',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         title: Text(
           '하이파이브',
@@ -24,6 +25,7 @@ class IntroducePage extends StatelessWidget {
             color: Colors.black,
             fontSize: 30,
             fontWeight: FontWeight.bold,
+            fontFamily: 'GES',
           ),
         ),
       ),
