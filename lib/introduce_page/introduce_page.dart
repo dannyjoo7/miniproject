@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:miniproject/main_page/user_service.dart';
 import 'package:provider/provider.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
 
 import '../photo_Detail_Page/Photo_Detail_Page.dart';
 
@@ -9,16 +13,12 @@ class IntroducePage extends StatelessWidget {
 
   int index;
 
-  final List<String> imagePaths = [
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
+  String basicImgPaths = "assets/images/";
+  List<String> path = [
+    "/mbti.png",
+    "/self_introduce.png",
+    "/advantages.png",
+    "/collaboration_style.png",
   ];
 
   @override
@@ -65,7 +65,7 @@ class IntroducePage extends StatelessWidget {
               padding: EdgeInsets.only(top: 30),
               child: GridView.count(
                 crossAxisCount: 3, // 열의 개수
-                children: List.generate(9, (index) {
+                children: List.generate(4, (index) {
                   return Container(
                     padding: EdgeInsets.all(10),
                     child: GestureDetector(
@@ -76,8 +76,8 @@ class IntroducePage extends StatelessWidget {
                                 builder: (context) => photoDetail()));
                       },
                       child: Image.asset(
-                        imagePaths[index],
-                        fit: BoxFit.scaleDown,
+                        "$basicImgPaths${user.id}${path[index]}",
+                        fit: BoxFit.fill,
                       ),
                     ),
                   );
