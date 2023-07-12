@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../photo_Detail_Page/Photo_Detail_Page.dart';
+
 class IntroducePage extends StatelessWidget {
   final List<String> imagePaths = [
     'assets/images/hun.png',
@@ -57,9 +59,17 @@ class IntroducePage extends StatelessWidget {
                 children: List.generate(9, (index) {
                   return Container(
                     padding: EdgeInsets.all(10),
-                    child: Image.asset(
-                      imagePaths[index],
-                      fit: BoxFit.scaleDown,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => photoDetail()));
+                      },
+                      child: Image.asset(
+                        imagePaths[index],
+                        fit: BoxFit.scaleDown,
+                      ),
                     ),
                   );
                 }),
