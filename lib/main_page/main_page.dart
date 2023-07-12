@@ -16,8 +16,8 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int curidx = 0;
-  bool isHeart = false;
-  bool isBookmarked = false;
+  bool isHeart = true;
+  bool isBookmarked = true;
 
   @override
   Widget build(BuildContext context) {
@@ -86,9 +86,27 @@ class _MainPageState extends State<MainPage> {
                       // 팀 사진 페이지
                       case 0:
                         return Container(
-                          color: Colors.black,
-                          child: Image(
-                            image: AssetImage('assets/images/hun.png'),
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  Colors.blue,
+                                  Colors.purple
+                                ], // 그라데이션 색상 배열
+                                begin: Alignment.topLeft, // 그라데이션 시작 위치
+                                end: Alignment.bottomRight, // 그라데이션 끝 위치
+                              ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Hi-Five",
+                                style: TextStyle(
+                                  fontFamily: "Fasthand",
+                                  fontSize: 100,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
                           ),
                         );
 
@@ -125,7 +143,7 @@ class _MainPageState extends State<MainPage> {
                       // 팀원 소개 페이지
                       case 2:
                         return Container(
-                          color: Colors.grey,
+                          color: Colors.grey[300],
                           child: Center(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,

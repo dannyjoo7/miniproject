@@ -191,32 +191,29 @@ class IntroducePage extends StatelessWidget {
             ],
           ),
           Divider(
-            color: Colors.black,
+            color: Colors.grey[300],
             thickness: 1,
           ),
           Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(top: 6),
-              child: GridView.count(
-                crossAxisCount: 3,
-                children: List.generate(4, (index) {
-                  return Container(
-                    padding: EdgeInsets.all(3),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => photoDetail()));
-                      },
-                      child: Image.asset(
-                        "$basicImgPaths${user.id}${path[index]}",
-                        fit: BoxFit.fill,
-                      ),
+            child: GridView.count(
+              crossAxisCount: 3,
+              children: List.generate(4, (index) {
+                return Container(
+                  padding: EdgeInsets.all(3),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => photoDetail()));
+                    },
+                    child: Image.asset(
+                      "$basicImgPaths${user.id}${path[index]}",
+                      fit: BoxFit.fill,
                     ),
-                  );
-                }),
-              ),
+                  ),
+                );
+              }),
             ),
           ),
         ],
