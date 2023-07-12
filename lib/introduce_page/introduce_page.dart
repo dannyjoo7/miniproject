@@ -1,28 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:miniproject/main_page/user_service.dart';
+import 'package:provider/provider.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
 
 import '../photo_Detail_Page/Photo_Detail_Page.dart';
 
 class IntroducePage extends StatelessWidget {
-  final List<String> imagePaths = [
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
-    'assets/images/hun.png',
+  IntroducePage({required this.index});
+
+  int index;
+
+  String basicImgPaths = "assets/images/";
+  List<String> path = [
+    "/mbti.png",
+    "/self_introduce.png",
+    "/advantages.png",
+    "/collaboration_style.png",
   ];
 
   @override
   Widget build(BuildContext context) {
+    UserService userService = context.read<UserService>();
+    User user = userService.userList[index];
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         title: Text(
-          '하이파이브',
+          '하이 파이브',
           style: TextStyle(
             color: Colors.black,
             fontSize: 30,
@@ -30,35 +39,154 @@ class IntroducePage extends StatelessWidget {
             fontFamily: 'GES',
           ),
         ),
+        actions: [
+          Icon(
+            Icons.more_vert,
+            color: Colors.black,
+          ),
+        ],
       ),
       body: Column(
         children: [
-          Container(
-            color: Colors.black,
-            height: 2,
+          Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: Row(
+              children: [
+                // 개인 페이지 아이콘
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: Icon(
+                    Icons.account_circle,
+                    size: 75,
+                  ),
+                ),
+                SizedBox(
+                  width: 80,
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "4",
+                      style:
+                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "게시물",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "4",
+                      style:
+                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "팔로워",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Column(
+                  children: [
+                    Text(
+                      "${user.views}",
+                      style:
+                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "조회수",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 16),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'ljmin94\n한 줄 소개글\nMBTI\n자신에 대한 설명\n객관적으로 살펴본 자신의 장점\n자신의 협업 스타일 소개',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
+            padding: const EdgeInsets.only(bottom: 5),
+            child: Row(
+              children: [
+                // 개인 페이지 아이디
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Text(
+                    "hyunjun6133",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
                 ),
-                textAlign: TextAlign.left,
-              ),
+              ],
             ),
+          ),
+          Row(
+            children: [
+              // 한줄 소개글
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Text(
+                  user.oneLiner,
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        // 개인 블로그 주소
+                        builder: (context) => WebView(
+                          initialUrl: 'https://velog.io/@hyunjun6133',
+                        ),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: (Colors.white),
+                    minimumSize: Size(90, 35),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    side: BorderSide(width: 2),
+                  ),
+                  child: Text(
+                    '블로그',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Divider(
+            color: Colors.black,
+            thickness: 1,
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.only(top: 30),
+              padding: EdgeInsets.only(top: 6),
               child: GridView.count(
-                crossAxisCount: 3, // 열의 개수
-                children: List.generate(9, (index) {
+                crossAxisCount: 3,
+                children: List.generate(4, (index) {
                   return Container(
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(3),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -67,8 +195,8 @@ class IntroducePage extends StatelessWidget {
                                 builder: (context) => photoDetail()));
                       },
                       child: Image.asset(
-                        imagePaths[index],
-                        fit: BoxFit.scaleDown,
+                        "$basicImgPaths${user.id}${path[index]}",
+                        fit: BoxFit.fill,
                       ),
                     ),
                   );

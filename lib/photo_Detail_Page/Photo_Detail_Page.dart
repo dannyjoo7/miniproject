@@ -1,8 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class photoDetail extends StatelessWidget {
+class photoDetail extends StatefulWidget {
   const photoDetail({super.key});
+
+  @override
+  State<photoDetail> createState() => _photoDetailState();
+}
+
+class _photoDetailState extends State<photoDetail> {
+  bool like = false;
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +43,11 @@ class photoDetail extends StatelessWidget {
                   bottom: 0,
                   child: Row(
                     children: [
+                      SizedBox(
+                        width: 10,
+                      ),
                       Container(
-                        width: 92.5,
+                        width: 90,
                         height: 100,
                         decoration: BoxDecoration(
                           color: Colors.white54,
@@ -72,6 +84,41 @@ class photoDetail extends StatelessWidget {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.45,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            like = !like;
+                          });
+                        },
+                        child: Icon(
+                          like
+                              ? CupertinoIcons.heart_fill
+                              : CupertinoIcons.heart,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 4,
+                      ),
+                      if (like == true)
+                        Text(
+                          "${count = 1}",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        ),
+                      if (like == false)
+                        Text(
+                          "${count = 0}",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                          ),
+                        ),
                     ],
                   ),
                 )
