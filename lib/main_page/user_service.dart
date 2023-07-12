@@ -13,16 +13,18 @@ class User {
     required this.introduceMyself,
     required this.myAdvantage,
     required this.collaborationStyle,
+    required this.blog,
     required this.views,
   });
 
-  int id;
+  String id;
   String name;
   String oneLiner;
   String mbti;
   String introduceMyself;
   String myAdvantage;
   String collaborationStyle;
+  String? blog;
   int views;
 
   Map toJson() {
@@ -46,6 +48,7 @@ class User {
       myAdvantage: json['myAdvantage'],
       collaborationStyle: json['collaborationStyle'],
       views: json['views'],
+      blog: json['blog'],
     );
   }
 }
@@ -61,53 +64,58 @@ class UserService extends ChangeNotifier {
   initUserList() {
     userList = [
       User(
-        id: 0,
+        id: "dannyjoo",
         name: "주찬영",
         oneLiner: "인생은 한 방",
         mbti: "INTP",
         introduceMyself: "자신에 대한 설명 (주찬영)",
         myAdvantage: "나의 장점 (주찬영)",
         collaborationStyle: "협업 스타일 소개 (주찬영)",
+        blog: "https://dannyjoo.tistory.com/",
         views: 0,
       ),
       User(
-        id: 1,
+        id: "hihyungul",
         name: "김현걸",
         oneLiner: "인생은 두 방",
         mbti: "INTP",
         introduceMyself: "자신에 대한 설명 (김현걸)",
         myAdvantage: "나의 장점 (김현걸)",
         collaborationStyle: "협업 스타일 소개 (김현걸)",
+        blog: null,
         views: 0,
       ),
       User(
-        id: 2,
+        id: "limduh2",
         name: "임두형",
         oneLiner: "인생은 세 방",
         mbti: "INTP",
         introduceMyself: "자신에 대한 설명 (임두형)",
         myAdvantage: "나의 장점 (임두형)",
         collaborationStyle: "협업 스타일 소개 (임두형)",
+        blog: null,
         views: 0,
       ),
       User(
-        id: 3,
+        id: "hyunjun6133",
         name: "손현준",
         oneLiner: "인생은 네 방",
         mbti: "INTP",
         introduceMyself: "자신에 대한 설명 (손현준)",
         myAdvantage: "나의 장점 (손현준)",
         collaborationStyle: "협업 스타일 소개 (손현준)",
+        blog: "https://velog.io/@hyunjun6133",
         views: 0,
       ),
       User(
-        id: 4,
+        id: "ljmin94",
         name: "이종민",
         oneLiner: "인생은 다섯 방",
         mbti: "INTP",
         introduceMyself: "자신에 대한 설명 (이종민)",
         myAdvantage: "나의 장점 (이종민)",
         collaborationStyle: "협업 스타일 소개 (이종민)",
+        blog: null,
         views: 0,
       ),
     ];
