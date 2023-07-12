@@ -12,6 +12,7 @@ class User {
     required this.introduceMyself,
     required this.myAdvantage,
     required this.collaborationStyle,
+    required this.views,
   });
 
   int id;
@@ -21,6 +22,7 @@ class User {
   String introduceMyself;
   String myAdvantage;
   String collaborationStyle;
+  int views;
 
   Map toJson() {
     return {
@@ -42,6 +44,7 @@ class User {
       introduceMyself: json['introduceMyself'],
       myAdvantage: json['myAdvantage'],
       collaborationStyle: json['collaborationStyle'],
+      views: json['views'],
     );
   }
 }
@@ -64,6 +67,7 @@ class UserService extends ChangeNotifier {
         introduceMyself: "자신에 대한 설명 (주찬영)",
         myAdvantage: "나의 장점 (주찬영)",
         collaborationStyle: "협업 스타일 소개 (주찬영)",
+        views: 0,
       ),
       User(
         id: 1,
@@ -73,6 +77,7 @@ class UserService extends ChangeNotifier {
         introduceMyself: "자신에 대한 설명 (김현걸)",
         myAdvantage: "나의 장점 (김현걸)",
         collaborationStyle: "협업 스타일 소개 (김현걸)",
+        views: 0,
       ),
       User(
         id: 2,
@@ -82,6 +87,7 @@ class UserService extends ChangeNotifier {
         introduceMyself: "자신에 대한 설명 (임두형)",
         myAdvantage: "나의 장점 (임두형)",
         collaborationStyle: "협업 스타일 소개 (임두형)",
+        views: 0,
       ),
       User(
         id: 3,
@@ -91,6 +97,7 @@ class UserService extends ChangeNotifier {
         introduceMyself: "자신에 대한 설명 (손현준)",
         myAdvantage: "나의 장점 (손현준)",
         collaborationStyle: "협업 스타일 소개 (손현준)",
+        views: 0,
       ),
       User(
         id: 4,
@@ -100,6 +107,7 @@ class UserService extends ChangeNotifier {
         introduceMyself: "자신에 대한 설명 (이종민)",
         myAdvantage: "나의 장점 (이종민)",
         collaborationStyle: "협업 스타일 소개 (이종민)",
+        views: 0,
       ),
     ];
   }

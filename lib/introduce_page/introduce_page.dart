@@ -51,7 +51,7 @@ class IntroducePage extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                '${user.name}\n${user.oneLiner}\n${user.mbti}\n${user.introduceMyself}\n${user.myAdvantage}\n${user.collaborationStyle}',
+                '${user.views}\n${user.name}\n${user.oneLiner}\n${user.mbti}\n${user.introduceMyself}\n${user.myAdvantage}\n${user.collaborationStyle}',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
