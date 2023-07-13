@@ -9,9 +9,9 @@ import 'dart:io';
 import '../photo_Detail_Page/Photo_Detail_Page.dart';
 
 class IntroducePage extends StatelessWidget {
-  IntroducePage({required this.index});
+  IntroducePage({required this.userIndex});
 
-  int index;
+  int userIndex;
 
   String basicImgPaths = "assets/images/";
   List<String> path = [
@@ -24,7 +24,7 @@ class IntroducePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     UserService userService = context.read<UserService>();
-    User user = userService.userList[index];
+    User user = userService.userList[userIndex];
 
     userService.loadUserList();
 
@@ -196,6 +196,8 @@ class IntroducePage extends StatelessWidget {
             color: Colors.grey[300],
             thickness: 1,
           ),
+
+          // photoPage
           Expanded(
             child: GridView.count(
               crossAxisCount: 3,
@@ -207,7 +209,10 @@ class IntroducePage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => photoDetail()));
+                              builder: (context) => photoDetail(
+                                    userIndex: userIndex,
+                                    pathIndex: index,
+                                  )));
                     },
                     child: Image.asset(
                       "$basicImgPaths${user.id}${path[index]}",

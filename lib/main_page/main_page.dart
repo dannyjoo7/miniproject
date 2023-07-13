@@ -166,7 +166,8 @@ class _MainPageState extends State<MainPage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      IntroducePage(index: 0)));
+                                                      IntroducePage(
+                                                          userIndex: 0)));
                                         },
                                       ),
                                     ),
@@ -185,7 +186,8 @@ class _MainPageState extends State<MainPage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      IntroducePage(index: 1)));
+                                                      IntroducePage(
+                                                          userIndex: 1)));
                                         },
                                       ),
                                     ),
@@ -204,7 +206,8 @@ class _MainPageState extends State<MainPage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      IntroducePage(index: 2)));
+                                                      IntroducePage(
+                                                          userIndex: 2)));
                                         },
                                       ),
                                     ),
@@ -229,7 +232,8 @@ class _MainPageState extends State<MainPage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      IntroducePage(index: 3)));
+                                                      IntroducePage(
+                                                          userIndex: 3)));
                                         },
                                       ),
                                     ),
@@ -248,7 +252,8 @@ class _MainPageState extends State<MainPage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      IntroducePage(index: 4)));
+                                                      IntroducePage(
+                                                          userIndex: 4)));
                                         },
                                       ),
                                     ),

@@ -2,8 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../main_page/user_service.dart';
+
 class photoDetail extends StatefulWidget {
-  const photoDetail({super.key});
+  photoDetail({super.key, required this.userIndex, required this.pathIndex});
+
+  int userIndex;
+  int pathIndex;
+
   @override
   State<photoDetail> createState() => _photoDetailState();
 }
@@ -11,8 +17,20 @@ class photoDetail extends StatefulWidget {
 class _photoDetailState extends State<photoDetail> {
   bool like = false;
   int count = 0;
+
+  String basicImgPaths = "assets/images/";
+  List<String> path = [
+    "/mbti.png",
+    "/self_introduce.png",
+    "/advantages.png",
+    "/collaboration_style.png",
+  ];
+
   @override
   Widget build(BuildContext context) {
+    UserService userService = context.read<UserService>();
+    User user = userService.userList[widget.userIndex];
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -23,8 +41,8 @@ class _photoDetailState extends State<photoDetail> {
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.7,
                     width: MediaQuery.of(context).size.width * 1,
-                    child: Image.network(
-                      "https://i.pinimg.com/originals/53/7e/f5/537ef59499259ba707068742f91a10f8.jpg", //배경사진
+                    child: Image.asset(
+                      "$basicImgPaths${user.id}${path[widget.pathIndex]}", //배경사진
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -45,15 +63,20 @@ class _photoDetailState extends State<photoDetail> {
                         width: 10,
                       ),
                       Container(
-                        width: 90,
-                        height: 100,
+                        width: 75,
+                        height: 75,
                         decoration: BoxDecoration(
-                          color: Colors.white54,
                           shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: NetworkImage(
-                              "https://upload.wikimedia.org/wikipedia/ko/4/4a/%EC%8B%A0%EC%A7%B1%EA%B5%AC.png", //프로필사진
-                            ),
+                          border: Border.all(
+                            color: Colors.black, // 테두리 색상
+                            width: 2.0, // 테두리 두께
+                          ),
+                        ),
+                        child: ClipOval(
+                          child: Image.asset(
+                            "$basicImgPaths${user.id}.png", //프로필사진
+
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -119,7 +142,7 @@ class _photoDetailState extends State<photoDetail> {
                         ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
             Expanded(
