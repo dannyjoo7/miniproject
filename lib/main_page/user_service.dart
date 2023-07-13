@@ -116,11 +116,12 @@ class UserService extends ChangeNotifier {
       User(
         id: "ljmin94",
         name: "이종민",
-        oneLiner: "인생은 다섯 방",
+        oneLiner: "끝날 때까지 끝난게 아니다.",
         mbti: "ISFP",
-        introduceMyself: "자신에 대한 설명 (이종민)",
-        myAdvantage: "나의 장점 (이종민)",
-        collaborationStyle: "협업 스타일 소개 (이종민)",
+        introduceMyself: "94년생 이고 인천시 부평구에 부모님과 함께 거주하고 있으며,\n위로 형이 한명 있습니다.",
+        myAdvantage: "쉽게 포기하지 않는다는 것이 장점입니다.",
+        collaborationStyle:
+            "소통과 협력을 중시하는 스타일입니다.\n프로젝트를 진행하면서 끊임없이 소통하고 모르는 것이 있으면 협력을 통해서 풀어 나가려고 합니다.",
         blog: "https://velog.io/@ljmin94",
         views: 0,
       ),
