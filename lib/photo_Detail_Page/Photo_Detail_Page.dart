@@ -81,27 +81,46 @@ class _photoDetailState extends State<photoDetail> {
                         ),
                       ),
                       SizedBox(
+                        height: 100,
                         width: 20,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "이름",
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
+                          if (widget.pathIndex == 0)
+                            Text(
+                              "MBTI",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
+                            )
+                          else if (widget.pathIndex == 1)
+                            Text(
+                              "자기소개",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
+                            )
+                          else if (widget.pathIndex == 2)
+                            Text(
+                              "장점",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
+                            )
+                          else if (widget.pathIndex == 3)
+                            Text(
+                              "협업스타일",
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
                           SizedBox(
                             height: 3,
-                          ),
-                          Text(
-                            "MBTI",
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
-                            ),
                           ),
                         ],
                       ),
@@ -153,13 +172,38 @@ class _photoDetailState extends State<photoDetail> {
                       Image.asset(
                         'assets/images/note.png',
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: Text(
-                          "안녕하세요. 잘 부탁드립니다. ㅁㅁㅁ", //소개글
-                          style: TextStyle(fontSize: 18, height: 1.7),
-                        ),
-                      ),
+                      if (widget.pathIndex == 0)
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text(
+                            "${user.mbti}", //소개글
+                            style: TextStyle(fontSize: 18, height: 1.7),
+                          ),
+                        )
+                      else if (widget.pathIndex == 1)
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text(
+                            "${user.introduceMyself}", //소개글
+                            style: TextStyle(fontSize: 18, height: 1.7),
+                          ),
+                        )
+                      else if (widget.pathIndex == 2)
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text(
+                            "${user.myAdvantage}", //소개글
+                            style: TextStyle(fontSize: 18, height: 1.7),
+                          ),
+                        )
+                      else if (widget.pathIndex == 3)
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Text(
+                            "${user.collaborationStyle}", //소개글
+                            style: TextStyle(fontSize: 18, height: 1.7),
+                          ),
+                        )
                     ],
                   ),
                 ],

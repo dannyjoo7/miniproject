@@ -127,7 +127,8 @@ class UserService extends ChangeNotifier {
         id: "ljmin94",
         name: "이종민",
         oneLiner: "끝날 때까지\n끝난게 아니다",
-        mbti: "ISFP",
+        mbti:
+            "ISFP 말없이 다정하고 온화하며 사람들에게 친절하고 상대방을 잘 알게 될 때까지 내면의 모습이 잘 보이지 않는다.",
         introduceMyself: "94년생 이고 인천시 부평구에 부모님과 함께 거주하고 있으며,\n위로 형이 한명 있습니다.",
         myAdvantage: "쉽게 포기하지 않는다는 것이 장점입니다.",
         collaborationStyle:
