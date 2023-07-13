@@ -57,9 +57,22 @@ class IntroducePage extends StatelessWidget {
                 // 개인 페이지 아이콘
                 Padding(
                   padding: const EdgeInsets.only(left: 25),
-                  child: Icon(
-                    Icons.account_circle,
-                    size: 75,
+                  child: Container(
+                    width: 75,
+                    height: 75,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.black, // 테두리 색상
+                        width: 2.0, // 테두리 두께
+                      ),
+                    ),
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/${user.id}.png', // 이미지 파일 경로
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(
