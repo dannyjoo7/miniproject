@@ -14,6 +14,7 @@ class UserSimpleInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
           Icons.account_circle,
@@ -27,6 +28,8 @@ class UserSimpleInfo extends StatelessWidget {
         ),
         Text(
           one_line_introduction,
+          style: TextStyle(),
+          textAlign: TextAlign.center,
         ),
       ],
     );
