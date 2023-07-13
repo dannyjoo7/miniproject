@@ -74,9 +74,10 @@ class UserService extends ChangeNotifier {
         name: "주찬영",
         oneLiner: "인생은 한 방",
         mbti: "INTP",
-        introduceMyself: "자신에 대한 설명 (주찬영)",
-        myAdvantage: "나의 장점 (주찬영)",
-        collaborationStyle: "협업 스타일 소개 (주찬영)",
+        introduceMyself: "안녕하세요 주찬영입니다!\n광명에서 거주하고 있으며 나이는 빠른00입니다.",
+        myAdvantage: "한 번 시작하면 반드시 마무리를 짓는 스타일입니다.\n",
+        collaborationStyle:
+            "협업을 많이 진행해보지 않아 스타일이 정해지지는 않았습니다.\n이전까지의 작은 경험들을 미루어봐 설계를 중요하게 생각하는 스타일인 것 같습니다.",
         blog: "https://dannyjoo.tistory.com/",
         views: 0,
       ),
@@ -85,9 +86,11 @@ class UserService extends ChangeNotifier {
         name: "김현걸",
         oneLiner: "인생은 두 방",
         mbti: "ISTP",
-        introduceMyself: "자신에 대한 설명 (김현걸)",
-        myAdvantage: "나의 장점 (김현걸)",
-        collaborationStyle: "협업 스타일 소개 (김현걸)",
+        introduceMyself:
+            "안녕하세요.\n내일배움캠프 7기_Android 10조 김현걸입니다.\n극 I의 성향이라.. 협업에 익숙치는 않지만 열심히 하겠습니다.\n잘 부탁드립니다.",
+        myAdvantage: "책임감이 강한 편이다.\n솔직하다\n이야기를 잘 듣는 편이다.",
+        collaborationStyle:
+            "제 의견을 적극적으로 밀어 붙이는 타입은 아니고\n자료들을 가져와서 팀원들에게 보여주고 의견을 받아서\n다수결로 보통 정하는 스타일입니다.",
         blog: "https://velog.io/@werds7890",
         views: 0,
       ),
