@@ -3,6 +3,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 // User 데이터의 형식을 정해줍니다.
 class User {
   User({
@@ -29,12 +31,15 @@ class User {
 
   Map toJson() {
     return {
+      'id': id,
       'name': name,
       'oneLiner': oneLiner,
       'mbti': mbti,
       'introduceMyself': introduceMyself,
       'myAdvantage': myAdvantage,
       'collaborationStyle': collaborationStyle,
+      'blog': blog,
+      'views': views,
     };
   }
 
@@ -57,6 +62,7 @@ class User {
 class UserService extends ChangeNotifier {
   UserService() {
     initUserList();
+    loadUserList();
   }
 
   late List<User> userList;
@@ -78,22 +84,22 @@ class UserService extends ChangeNotifier {
         id: "hihyungul",
         name: "김현걸",
         oneLiner: "인생은 두 방",
-        mbti: "INTP",
+        mbti: "ISTP",
         introduceMyself: "자신에 대한 설명 (김현걸)",
         myAdvantage: "나의 장점 (김현걸)",
         collaborationStyle: "협업 스타일 소개 (김현걸)",
-        blog: null,
+        blog: "https://velog.io/@werds7890",
         views: 0,
       ),
       User(
         id: "limduh2",
         name: "임두형",
         oneLiner: "인생은 세 방",
-        mbti: "INTP",
+        mbti: "ESTJ",
         introduceMyself: "자신에 대한 설명 (임두형)",
         myAdvantage: "나의 장점 (임두형)",
         collaborationStyle: "협업 스타일 소개 (임두형)",
-        blog: null,
+        blog: "https://duhyoung-tom.tistory.com/",
         views: 0,
       ),
       User(
@@ -111,11 +117,11 @@ class UserService extends ChangeNotifier {
         id: "ljmin94",
         name: "이종민",
         oneLiner: "인생은 다섯 방",
-        mbti: "INTP",
+        mbti: "ISFP",
         introduceMyself: "자신에 대한 설명 (이종민)",
         myAdvantage: "나의 장점 (이종민)",
         collaborationStyle: "협업 스타일 소개 (이종민)",
-        blog: null,
+        blog: "https://velog.io/@ljmin94",
         views: 0,
       ),
     ];
@@ -125,71 +131,32 @@ class UserService extends ChangeNotifier {
     return userList[index];
   }
 
-  // createMemo({required String content}) {
-  //   User memo = User(name: content, oneLiner: false, mbti: DateTime.now());
-  //   userList.add(memo);
-  //   notifyListeners(); // Consumer<MemoService>의 builder 부분을 호출해서 화면 새로고침
-  //   saveMemoList();
-  // }
+  saveUserList() {
+    List userJsonList = userList.map((user) => user.toJson()).toList();
+    // [{"content": "1"}, {"content": "2"}]
 
-  // updateMemo({required int index, required String content}) {
-  //   User memo = userList[index];
-  //   memo.name = content;
+    String jsonString = jsonEncode(userJsonList);
+    // '[{"content": "1"}, {"content": "2"}]'
 
-  //   // 수정된 시간
-  //   memo.mbti = DateTime.now();
+    prefs.setString('userList', jsonString);
+    // notifyListeners();
+  }
 
-  //   notifyListeners();
-  //   saveMemoList();
-  // }
+  loadUserList() {
+    String? jsonString = prefs.getString('userList');
+    // '[{"content": "1"}, {"content": "2"}]'
 
-  // fiexedMemo({required int index, required bool isFixed}) {
-  //   User memo = userList[index];
-  //   memo.oneLiner = isFixed;
+    if (jsonString == null) return; // null 이면 로드하지 않음
 
-  //   sortList();
-  //   notifyListeners();
-  //   saveMemoList();
-  // }
+    List userJsonList = jsonDecode(jsonString);
+    // [{"content": "1"}, {"content": "2"}]
 
-  // deleteMemo({required int index}) {
-  //   userList.removeAt(index);
-  //   notifyListeners();
-  //   saveMemoList();
-  // }
+    userList = userJsonList.map((json) => User.fromJson(json)).toList();
+  }
 
-  // saveMemoList() {
-  //   List memoJsonList = userList.map((memo) => memo.toJson()).toList();
-  //   // [{"content": "1"}, {"content": "2"}]
-
-  //   String jsonString = jsonEncode(memoJsonList);
-  //   // '[{"content": "1"}, {"content": "2"}]'
-
-  //   prefs.setString('memoList', jsonString);
-  // }
-
-  // loadMemoList() {
-  //   String? jsonString = prefs.getString('memoList');
-  //   // '[{"content": "1"}, {"content": "2"}]'
-
-  //   if (jsonString == null) return; // null 이면 로드하지 않음
-
-  //   List memoJsonList = jsonDecode(jsonString);
-  //   // [{"content": "1"}, {"content": "2"}]
-
-  //   userList = memoJsonList.map((json) => User.fromJson(json)).toList();
-  // }
-
-  // // 재정렬
-  // sortList() {
-  //   userList.sort((a, b) {
-  //     if (a.oneLiner && !b.oneLiner) {
-  //       return -1; // a가 true이고 b가 false이면 a를 더 앞에 배치
-  //     } else if (!a.oneLiner && b.oneLiner) {
-  //       return 1; // a가 false이고 b가 true이면 b를 더 앞에 배치
-  //     } else {
-  //       return 0; // 두 요소의 isFixed 값이 동일하면 순서 변경 없음
-  //     }
-  //   });
-  // }
+  // 조회수 업 함수
+  countUpViews(int index) {
+    userList[index].views++;
+    saveUserList();
+  }
 }
