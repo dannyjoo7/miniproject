@@ -155,9 +155,10 @@ class _MainPageState extends State<MainPage> {
                                       padding: const EdgeInsets.all(15.0),
                                       child: GestureDetector(
                                         child: UserSimpleInfo(
-                                          num: userList[0].name,
+                                          name: userList[0].name,
                                           one_line_introduction:
                                               userList[0].oneLiner,
+                                          id: userList[0].id,
                                         ),
                                         onTap: () {
                                           userService.countUpViews(0);
@@ -173,9 +174,10 @@ class _MainPageState extends State<MainPage> {
                                       padding: const EdgeInsets.all(15.0),
                                       child: GestureDetector(
                                         child: UserSimpleInfo(
-                                          num: userList[1].name,
+                                          name: userList[1].name,
                                           one_line_introduction:
                                               userList[1].oneLiner,
+                                          id: userList[1].id,
                                         ),
                                         onTap: () {
                                           userService.countUpViews(1);
@@ -191,9 +193,10 @@ class _MainPageState extends State<MainPage> {
                                       padding: const EdgeInsets.all(15.0),
                                       child: GestureDetector(
                                         child: UserSimpleInfo(
-                                          num: userList[2].name,
+                                          name: userList[2].name,
                                           one_line_introduction:
                                               userList[2].oneLiner,
+                                          id: userList[2].id,
                                         ),
                                         onTap: () {
                                           userService.countUpViews(2);
@@ -214,9 +217,10 @@ class _MainPageState extends State<MainPage> {
                                       padding: const EdgeInsets.all(15.0),
                                       child: GestureDetector(
                                         child: UserSimpleInfo(
-                                          num: userList[3].name,
+                                          name: userList[3].name,
                                           one_line_introduction:
                                               userList[3].oneLiner,
+                                          id: userList[3].id,
                                         ),
                                         onTap: () {
                                           userService.countUpViews(3);
@@ -233,9 +237,10 @@ class _MainPageState extends State<MainPage> {
                                       padding: const EdgeInsets.all(15.0),
                                       child: GestureDetector(
                                         child: UserSimpleInfo(
-                                          num: userList[4].name,
+                                          name: userList[4].name,
                                           one_line_introduction:
                                               userList[4].oneLiner,
+                                          id: userList[4].id,
                                         ),
                                         onTap: () {
                                           userService.countUpViews(4);
