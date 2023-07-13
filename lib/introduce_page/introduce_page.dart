@@ -26,6 +26,8 @@ class IntroducePage extends StatelessWidget {
     UserService userService = context.read<UserService>();
     User user = userService.userList[index];
 
+    userService.loadUserList();
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,

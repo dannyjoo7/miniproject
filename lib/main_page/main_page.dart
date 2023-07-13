@@ -160,7 +160,7 @@ class _MainPageState extends State<MainPage> {
                                               userList[0].oneLiner,
                                         ),
                                         onTap: () {
-                                          userList[0].views++;
+                                          userService.countUpViews(0);
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -178,7 +178,7 @@ class _MainPageState extends State<MainPage> {
                                               userList[1].oneLiner,
                                         ),
                                         onTap: () {
-                                          userList[1].views++;
+                                          userService.countUpViews(1);
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -196,7 +196,7 @@ class _MainPageState extends State<MainPage> {
                                               userList[2].oneLiner,
                                         ),
                                         onTap: () {
-                                          userList[2].views++;
+                                          userService.countUpViews(2);
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
@@ -219,7 +219,7 @@ class _MainPageState extends State<MainPage> {
                                               userList[3].oneLiner,
                                         ),
                                         onTap: () {
-                                          userList[3].views++;
+                                          userService.countUpViews(3);
 
                                           Navigator.push(
                                               context,
@@ -238,7 +238,7 @@ class _MainPageState extends State<MainPage> {
                                               userList[4].oneLiner,
                                         ),
                                         onTap: () {
-                                          userList[4].views++;
+                                          userService.countUpViews(4);
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
