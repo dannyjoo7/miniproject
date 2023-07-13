@@ -1,16 +1,56 @@
-# miniproject <팀 소개페이지>
+# 팀 명
+- 하이파이브(HI-FIVE)
 
-A new Flutter project.
+## 팀 소개
+- 안녕하세요 하이파이브입니다. 이번 내일 배움 캠프의 첫 프로젝트 조인만큼 만나서 반갑다는 의미와 팀원이 5명인 점을 고려하여 팀 이름을 하이파이브로 짓게 되었습니다. 첫 프로젝트인 만큼 아직 모르는 것도 많고 서툴지만 열심히 의기투합하여 성공적으로 마무리하도록 하겠습니다.
 
-## Getting Started
+## 팀 규칙
+- 13시에 점심 식사 및 18시 저녁 식사
+- Git 관련 요청 시 팀원들에게 먼저 말하기
+- ~님 존칭 사용 및 예의 갖추기
+- 게더타운 항시 상주
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 팀 하루 일정
+- 오전 9시 20분 : 출석체크 후 하루 계획 회의
+- 오후 2시 : 진척도, 문제점 공유
+- 오후 5시 : 진척도, 문제점 공유
+- 오후 8시 : 오늘 학습한 내용 또는 개발 진척도 확인
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# 프로젝트
+
+## 프로젝트 명
+- 팀 소개페이지
+
+## 프로젝트 소개
+- 처음 만난 저희 팀원들을 소개하는 앱 입니다. SNS앱 형식을 기반으로 앱을 만들게 되었습니다.
+
+# 개발기간
+
+- 7월10일 ~ 7월13일
+
+# 팀원 구성 및 역할 분담
+- 임두형 : 팀장
+- 주찬영 : 전체적인 디자인 틀 설계 및 GitHub 관리
+- 김현걸 : 팀원 상세 페이지 개발
+- 손현준 : 앱 시작 페이지 개발 상세 디자인 설계
+- 이종민 : 팀원 소개 페이지 개발
+# 개발 환경
+- 언어 : Dart
+- 프레임워크 : Flutter
+- 협업 툴 : Notion, Git Hub
+
+# 와이어 프레임
+![시작페이지](https://github.com/werds7890/git-test/assets/81506621/a5e2c789-5640-4ef4-b538-07217239b9b7)
+![메인페이지](https://github.com/werds7890/git-test/assets/81506621/b3157fc8-1570-4420-83f3-b112654193b2)
+![메인페이지2](https://github.com/werds7890/git-test/assets/81506621/bd62a308-647e-42ad-9909-b37ac70e5d21)
+![팀 상세 소개 페이지](https://github.com/werds7890/git-test/assets/81506621/a8269501-811e-486f-aed0-7e6d4c946989)
+![메인페이지3](https://github.com/werds7890/git-test/assets/81506621/d64895e3-a2d9-4209-853a-301079111078)
+![팀원 소개 페이지](https://github.com/werds7890/git-test/assets/81506621/4daee846-26b1-4de5-9e18-4db1ce3eb487)
+![팀원 상세 소개 페이지](https://github.com/werds7890/git-test/assets/81506621/4bcef80a-2d4a-43c8-b48a-e63ac9206a94)
+
+# 주요 기능
+- 조회수 -> 팀원 소개 페이지로 전환 시 조회수 증가
+- 좋아요 -> 팀원 상세 페이지 하트 모양 표시 누르면 색이 채워진다.
+- 웹 뷰  -> 웹 뷰 기능을 이용한 블로그 페이지 이동
