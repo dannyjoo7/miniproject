@@ -43,7 +43,7 @@ class UserSimpleInfo extends StatelessWidget {
         ),
         Text(
           one_line_introduction,
-          style: TextStyle(),
+          style: TextStyle(fontSize: 10),
           textAlign: TextAlign.center,
         ),
       ],
